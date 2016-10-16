@@ -18,7 +18,7 @@ def ip_address(node, i, lcd, update_display, interfaces):
             line(lcd, 2)
             lcd.write("IP: " + client.get_ip_address(node, interfaces[1]))
 
-def load_average(node, i, lcd, update_display):
+def load_average(node, i, lcd, update_display, useless):
     if i % 100 == 0 or update_display:
         lcd.clear()
         hostname(node, lcd)
@@ -26,3 +26,12 @@ def load_average(node, i, lcd, update_display):
         lcd.write(" Load averages:")
         line(lcd, 2)
         lcd.write(client.get_load_averages(node))
+
+def uptime(node, i, lcd, update_display, useless):
+    if i % 100 == 0 or update_display:
+        lcd.clear()
+        hostname(node, lcd)
+        line(lcd, 1)
+        lcd.write("Uptime:")
+        line(lcd, 2)
+        lcd.write(client.uptime(node))

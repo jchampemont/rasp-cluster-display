@@ -27,3 +27,9 @@ def get_load_averages(node):
     conn.request("GET", "/load_averages")
     r = conn.getresponse()
     return r.read()
+
+def uptime(node):
+    conn = get_conn(node)
+    conn.request("GET", "/uptime")
+    r = conn.getresponse()
+    return r.read()

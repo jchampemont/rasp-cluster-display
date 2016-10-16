@@ -18,5 +18,9 @@ def load():
     f = "{0:.2f}"
     return f.format(ld_avg[0]) + ", " + f.format(ld_avg[1]) + ", " + f.format(ld_avg[2])
 
+@app.route('/uptime')
+def uptime():
+    return utils.uptime()
+
 if __name__ == "__main__":
     app.run()
