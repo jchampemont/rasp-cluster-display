@@ -14,7 +14,7 @@ i = 0
 update_display = True
 lcd.clear()
 backlight.set_graph(0)
-fns = [fn.ip_address, fn.load_average]
+fns = [fn.ip_address, fn.load_average, fn.uptime]
 fn_n = 0;
 backlight_state = True
 
